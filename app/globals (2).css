@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Fraunces", "Playfair Display", serif;
+  --font-body: "Instrument Sans", "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis takes over smooth scroll */
+}
+
+body {
+  background-color: #0a0908;
+  color: #f3eee4;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background-color: #c9a24b;
+  color: #0a0908;
+}
+
+/* Focus visibility — never suppressed, luxury or not */
+:focus-visible {
+  outline: 2px solid #c9a24b;
+  outline-offset: 3px;
+}
+
+/* Signature diamond divider — echoes the mark beneath "E.D.O CONCEPTS" */
+.diamond-divider {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #c9a24b;
+  transform: rotate(45deg);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
