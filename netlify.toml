@@ -1,0 +1,11 @@
+[build]
+  command = "next build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Static export (see output: "export" in next.config.js) — `next build`
+# produces a plain `out/` folder of HTML/CSS/JS/images. Netlify just
+# serves it from the CDN directly; no serverless functions, no
+# Next.js Runtime plugin needed for this project as it stands today.
